@@ -1,0 +1,300 @@
+%%[
+
+if RequestParameter("submitted") == true then
+
+  var @createLead
+  set @createLead = insertDE(
+        "TesteHoroscopo",
+        "Nome", RequestParameter("Nome"),
+        "Email", RequestParameter("Email"),
+        "Cpf", RequestParameter("Cpf"),
+        "Idade", RequestParameter("idade")
+       )
+
+endif
+
+]%%
+
+
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cloud.vc.woopsicredi.com/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cloud.vc.woopsicredi.com/animate.min.css">
+    <link rel="stylesheet" href="http://cloud.vc.woopsicredi.com/animations.css">
+    <link rel="stylesheet" href="http://cloud.vc.woopsicredi.com/nprogress.min.css">
+    <link rel="stylesheet" href="http://cloud.vc.woopsicredi.com/style.css">
+    <title>Quiz Woop</title>
+    <link rel="icon" type="image/x-icon" href="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/924a53e8-4bc0-4e12-aaad-8fbacf18ac7c.png" />
+    <style type="text/css">
+      p {
+        margin: 0px;
+        padding: 0px;
+      }
+      .outer {
+        position: absolute;
+        left:50%;
+        max-width: 2732px;
+        max-height: 2048px;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+
+      .bg-front-img, .w-signo {
+        position: absolute;
+      }
+      .bg-questions, .bg-vaso, .bg-bike, .bg-moeda {
+        width: 100%;
+        position: absolute; 
+        pointer-events: none;
+      }
+
+      .front-text {
+        position: absolute;
+      }
+
+      .page-2 .title {
+        text-align: center;
+      }
+
+      input::placeholder {
+        color: #7743fa !important;
+        font-family: 'Nunito-Bold'
+      }
+      input::focus {
+        color: #7743fa !important;
+      }
+
+      .form-group {
+        margin: 0px;
+      }
+
+      .questions {
+        position: absolute;
+      }
+
+      .w-progress {
+        position: absolute;
+      }
+      .bg-cosmos {
+        background-image: url('http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/6b6b0b8f-f65b-4ab6-a426-87fd4bc955f2.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .page-13 .page-content {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="w-logo" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/0d01fad6-b745-4f91-b46a-eaa1f035c100.png" >
+    <div class="outer bg-cosmos animated infinite lightpulse slower">
+      
+    </div>
+    <div class="outer" >
+
+      <img class="btn w-btn-back" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/b08146cb-4252-4271-af40-8a89700d5d77.png" style="display: none;">
+
+      <div class="inner page-1" style="display: none;">
+        <img class="bg-front-img" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/1a62f60d-a023-4916-a6ec-31d852ebb025.png">
+        <div class="front-text">
+          <p class="title nunito-bold">Qual o seu<br>signo financeiro?</p>
+          <p class="content nunito-regular">Será que o seu signo financeiro é o mesmo que está no mapa astral? Faça agora esse teste do Woop Sicredi sobre como você usa o seu dinheiro e descubra o que os astros da grana têm a dizer sobre você.</p>
+          <button class="btn w-btn w-btn-continuar nunito-bold">Continuar</button>
+        </div>
+      </div>
+
+      <div class="inner page-2" style="display: none;">
+        <div class="form">
+          <p class="title nunito-bold">Nossos astros ainda não adivinham tudo, então deixe seus dados aí pra gente: </p>
+          <form action="%%=RequestParameter('PAGEURL')=%%" method="post">
+            <input type="hidden" name="ResultQuiz" value="-1">
+            <div class="form-group">
+              <input class="form-control w-input nunito-bold" type="text" name="Nome" maxlength="100" placeholder="Nome Completo:" >  
+            </div>
+            <div class="form-group">
+              <input class="form-control w-input nunito-bold" type="text" name="Email" maxlength="100" placeholder="E-mail:">  
+            </div>
+            <div class="form-group">
+              <input class="form-control w-input nunito-bold" type="text" name="Cpf" placeholder="CPF:">  
+            </div>
+            <div class="form-group">
+              <input class="form-control w-input nunito-bold" type="text" name="Idade" placeholder="Idade:">  
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn w-btn w-btn-comecar nunito-bold">Foi</button>
+              <input type="hidden" name="submitted"  value="true"/>
+            </div>  
+           
+          </form>
+        </div>
+      </div>
+
+      <img class="bg-bike" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/3bfa66a7-8731-4aac-aefd-10f9d46e439d.png" style="display: none;">
+      <img class="bg-moeda" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/b5af440e-1fc9-4032-a72e-c70d1ca34572.png" style="display: none;">
+      <img class="bg-vaso" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/c8300dca-6807-4c12-9120-bae779ffa56a.png" style="display: none;">
+
+      <div class="inner page-3" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-4" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-5" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-6" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-7" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-8" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-9" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-10" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-11" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <div class="inner page-12" style="display: none;">
+        <div class="questions">
+          <p class="title nunito-bold"></p>
+          <button class="btn w-btn w-btn-answer w-btn-answer-1 nunito-regular" data-answer="0.5"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-2 nunito-regular" data-answer="0.25"></button>
+          <button class="btn w-btn w-btn-answer w-btn-answer-3 nunito-regular" data-answer="0"></button>
+        </div>
+      </div>
+
+      <img class="bg-questions" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/083f2928-2a29-4125-af06-1cd671efbe34.png" style="display: none;">
+
+      <div class="w-progress" style="display: none;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <img class="btn w-btn-forward" src="http://image.vc.woopsicredi.com/lib/fe5915707c610c7b751d/m/1/2e697972-6b00-4468-9dd7-447d90156349.png" style="display: none;">
+
+      <div class="inner page-13" style="display: none;">
+        <img class="w-signo" src="">
+        <div class="page-content">
+          <p class="w-title nunito-bold">Você é <span class="signo"></span><br>das finanças</p>
+          <p class="w-mensagem nunito-regular"></p>
+          <p class="w-mensagem-pote nunito-bold"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="http://cloud.vc.woopsicredi.com/jquery-3.3.1.min.js"></script>
+    <script src="http://cloud.vc.woopsicredi.com/popperjs"></script>
+    <script src="http://cloud.vc.woopsicredi.com/bootstrap-4.1.3.min.js"></script>
+    <script src="http://cloud.vc.woopsicredi.com/jquery.inputmask.bundle.min.js"></script>
+    <script src="http://cloud.vc.woopsicredi.com/nprogress.min.js"></script>
+    <script src="http://cloud.vc.woopsicredi.com/jquery.validate.min.js"></script>
+    <script src="http://cloud.vc.woopsicredi.com/questions.json"></script>
+    <script src="http://cloud.vc.woopsicredi.com/mensagens.json"></script>
+    <script src="http://cloud.vc.woopsicredi.com/Scriptjs"></script>
+
+
+    <script type="text/javascript">
+      var currentPage=1;var currentQuestion=0
+var currentResult=0;$(document).ready(function(){var bodyHeight=$('body').height();var outerHeight=bodyHeight;var outerWidth=2732*outerHeight/2048;$('.outer').width(outerWidth);$('.outer').height(outerHeight);$('.outer').css('margin-left',-1*(outerWidth/2));var innerWidth=outerWidth*1780/2732;var innerHeight=innerWidth*1454/1780;$('.inner').width(innerWidth);$('.inner').height(innerHeight);$('.inner').css('margin-left',-1*(innerWidth/2));$('.inner').css('margin-top',-1*(innerHeight/2));$('.w-btn-back').width(96*innerHeight/1454);$('.w-btn-back').height(96*innerHeight/1454);$('.w-btn-back').css('top',984*innerHeight/1454);$('.w-btn-back').css('left',154*innerHeight/1454);$('.w-btn-forward').width(96*innerHeight/1454);$('.w-btn-forward').height(96*innerHeight/1454);$('.w-btn-forward').css('top',984*innerHeight/1454);$('.w-btn-forward').css('right',154*innerHeight/1454);$('.w-progress').css('left',1152*innerHeight/1454);$('.w-progress').css('bottom',500*outerHeight/2732);$('.page-1 .front-text').css('left',(innerWidth)/2);$('.page-1 .front-text').css('width',(innerWidth)/2);$('.front-text .title').css('font-size',(90*innerWidth/1454)+'px');$('.front-text .title').css('line-height',(98*innerWidth/1454)+'px');$('.front-text .title').css('padding-top',(118*innerWidth/1454)+'px');$('.front-text .title').css('padding-bottom',(44*innerWidth/1454)+'px');$('.bg-front-img').width(1780*innerHeight/1454);$('.bg-front-img').height(1454*innerHeight/1454);$('.w-signo').width(1780*innerHeight/1454);$('.w-signo').height(1454*innerHeight/1454);$('.front-text .content').css('font-size',(32*innerWidth/1454)+'px');$('.front-text .content').css('line-height',(50*innerWidth/1454)+'px');$('.front-text .content').css('padding-bottom',(60*innerWidth/1454)+'px');$('.front-text .w-btn-continuar').css('font-size',(40*innerWidth/1454)+'px');$('.front-text .w-btn-continuar').css('line-height',(54*innerWidth/1454)+'px');$('.front-text .w-btn-continuar').click(function(){$('.w-btn-forward').click()});$('.page-2 .form').css('padding-top',(120*innerHeight/1454)+'px');$('.page-2 .title').css('font-size',(94*innerHeight/1454)+'px');$('.page-2 .title').css('line-height',(96*innerHeight/1454)+'px');$('.page-2 .title').css('padding-bottom',(110*innerHeight/1454)+'px');$('.page-2 .form-control').css('height',(148*innerHeight/1454)+'px');$('.page-2 .form-control').css('font-size',(58*innerHeight/1454)+'px');$('.page-2 .form-control').css('line-height',(126*innerHeight/1454)+'px');$('.page-2 .form-group').css('margin-bottom',(52*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('margin-top',(44*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('font-size',(58*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('line-height',(59*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('padding-top',(28*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('padding-left',(86*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('padding-bottom',(28*innerHeight/1454)+'px');$('.page-2 .w-btn-comecar').css('padding-right',(86*innerHeight/1454)+'px');$('.page-2 form').submit(function(e){e.preventDefault();if($('input[name=ResultQuiz]').val()!=-1){$.ajax({url:$('form').attr('action'),method:$('form').attr('method'),data:$('form').serialize(),})}else{if($(this).valid()){$('.w-btn-forward').click()}}});$('.questions').css('left',654*innerHeight/1454);$('.questions').css('top',196*innerHeight/1454);$('.questions').css('width',1152*innerHeight/1454);$('.questions .title').css('font-size',99*innerHeight/1454);$('.questions .title').css('line-height',106*innerHeight/1454+'px');$('.questions .title').css('margin-bottom',84*innerHeight/1454+'px');$('.questions .w-btn-answer ').css('font-size',40*innerHeight/1454);$('.questions .w-btn-answer ').css('line-height',48*innerHeight/1454+'px');$('.questions .w-btn-answer ').css('height',158*innerHeight/1454+'px');$('.questions .w-btn-answer ').css('margin-bottom',56*innerHeight/1454);$('.page-13 .page-content').css('left',794*innerHeight/1454);$('.page-13 .page-content').css('top',300*innerHeight/1454);$('.page-13 .page-content').css('width',986*innerHeight/1454);$('.page-13 .w-title').css('font-size',104*innerHeight/1454);$('.page-13 .w-title').css('line-height',112*innerHeight/1454+'px');$('.page-13 .w-title').css('margin-bottom',78*innerHeight/1454+'px');$('.page-13 .w-mensagem').css('font-size',43*innerHeight/1454);$('.page-13 .w-mensagem').css('line-height',56*innerHeight/1454+'px');$('.page-13 .w-mensagem').css('margin-bottom',62*innerHeight/1454+'px');$('.page-13 .w-mensagem-pote').css('font-size',53*innerHeight/1454);$('.page-13 .w-mensagem-pote').css('line-height',63*innerHeight/1454+'px');$('.w-btn-back').click(function(){var currPage=$('.page-'+currentPage);var nextPage=$('.page-'+(currentPage-1))
+currPage.animateCss('wslideOutRight',function(){currPage.hide()});switch(currentPage){case 1:break;case 3:$('.bg-questions').animateCss('fadeOut',function(){$('.bg-questions').hide()});$('.w-progress').animateCss('fadeOut',function(){$('.w-progress').hide()});var dot=$('.w-progress .dot:nth-child(1)');dot.removeClass('dot-filled');break;case 4:$('.w-progress .dot:nth-child(2)').removeClass('dot-filled');$('.w-progress .dot:nth-child(1)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 5:$('.bg-vaso').animateCss('bounceOut',function(){$('.bg-vaso').hide()});$('.w-progress .dot:nth-child(3)').removeClass('dot-filled');$('.w-progress .dot:nth-child(2)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 6:$('.w-progress .dot:nth-child(4)').removeClass('dot-filled');$('.w-progress .dot:nth-child(3)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 7:$('.w-progress .dot:nth-child(5)').removeClass('dot-filled');$('.w-progress .dot:nth-child(4)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 8:$('.bg-moeda').animateCss('bounceOut',function(){$('.bg-moeda').hide()});$('.w-progress .dot:nth-child(6)').removeClass('dot-filled');$('.w-progress .dot:nth-child(5)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 9:$('.w-progress .dot:nth-child(7)').removeClass('dot-filled');$('.w-progress .dot:nth-child(6)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 10:$('.bg-bike').animateCss('bounceOut',function(){$('.bg-bike').hide()});$('.w-progress .dot:nth-child(8)').removeClass('dot-filled');$('.w-progress .dot:nth-child(7)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 11:$('.w-progress .dot:nth-child(9)').removeClass('dot-filled');$('.w-progress .dot:nth-child(8)').animateCss('bounce fast');$('.w-btn-forward').show();break;case 12:$('.w-progress .dot:nth-child(10)').removeClass('dot-filled');$('.w-progress .dot:nth-child(9)').animateCss('bounce fast');$('.w-btn-forward').show();break}
+currentPage--;switch(currentPage){case 1:$('.bg-cosmos').show();$('.bg-cosmos').animateCss('fadeIn',function(){$('.bg-cosmos').addClass('animated infinite lightpulse slower')});$('.w-btn-back').hide();$('.w-btn-forward').hide();break}
+nextPage.show();nextPage.animateCss('slideInLeft')});$('.w-btn-forward').click(function(){var currPage=$('.page-'+currentPage);var nextPage=$('.page-'+(currentPage+1))
+currPage.animateCss('wslideOutLeft',function(){currPage.hide()});switch(currentPage){case 1:$('.bg-cosmos').removeClass('animated infinite lightpulse slower');$('.bg-cosmos').animateCss('fadeOut',function(){$('.bg-cosmos').hide()});$('.w-btn-back').show();if(currentQuestion>0){$('.w-btn-forward').show()}
+break;case 2:break}
+currentPage++;switch(currentPage){case 1:break;case 3:$('.bg-questions').show();$('.bg-questions').animateCss('fadeIn');$('.w-progress').show();$('.w-progress').animateCss('fadeIn');var dot=$('.w-progress .dot:nth-child(1)');dot.addClass('dot-filled');dot.animateCss('bounce fast');break;case 4:var dot=$('.w-progress .dot:nth-child(2)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 5:$('.bg-vaso').show();$('.bg-vaso').animateCss('bounceIn');var dot=$('.w-progress .dot:nth-child(3)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 6:var dot=$('.w-progress .dot:nth-child(4)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 7:var dot=$('.w-progress .dot:nth-child(5)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 8:$('.bg-moeda').show();$('.bg-moeda').animateCss('bounceIn');var dot=$('.w-progress .dot:nth-child(6)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 9:var dot=$('.w-progress .dot:nth-child(7)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 10:$('.bg-bike').show();$('.bg-bike').animateCss('bounceIn');var dot=$('.w-progress .dot:nth-child(8)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 11:var dot=$('.w-progress .dot:nth-child(9)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 12:var dot=$('.w-progress .dot:nth-child(10)');dot.addClass('dot-filled');dot.animateCss('bounce fast');if(currentQuestion<=currentPage-3){$('.w-btn-forward').hide()}
+break;case 13:$('.w-btn-back').hide();$('.w-btn-forward').hide();$('.bg-moeda').hide();$('.bg-bike').hide();$('.bg-vaso').hide();$('.w-progress').hide();$('.bg-questions').hide();var resultado=0;$('.w-btn-answer.selected').each(function(index,value){resultado+=$(value).data('answer')});resultado=Math.ceil(resultado);if(resultado==0){resultado=1}
+$('input[name=ResultQuiz]').val(resultado);var messagePool=mensagens[resultado-1];var mensagem=messagePool[Math.floor(Math.random()*(messagePool.length))+0];$('.page-13 .w-signo').attr('src', mensagem.sign_image);$('.page-13 .signo').html(mensagem.sign);$('.page-13 .w-mensagem').html(mensagem.message);$('.page-13 .w-mensagem-pote').html(mensagem.ficha);$('form').submit();startEndTimer();break}
+nextPage.show();nextPage.animateCss('slideInRight')});$('.w-btn-answer').click(function(){var question=currentPage-2;if(currentQuestion<question){currentQuestion++}
+$('.page-'+currentPage+' .w-btn-answer').each(function(){$(this).removeClass('selected')});$(this).addClass('selected');$(this).animateCss('pulse faster');setTimeout(function(){$('.w-btn-forward').click()},100)})});$(document).ready(function(){var pageNumber=3;while(questions.length>0){var index=Math.floor(Math.random()*(questions.length))+0;var question=questions[index];questions.splice(index,1);$('.page-'+pageNumber+' .title').html(question.question);var answers=question.answer;var answerIndex=1;while(answers.length>0){var index=Math.floor(Math.random()*(answers.length))+0;var answer=answers[index];answers.splice(index,1);$('.page-'+pageNumber+' .w-btn-answer-'+answerIndex).html(answer.text);$('.page-'+pageNumber+' .w-btn-answer-'+answerIndex).data('answer',answer.value);answerIndex++}
+pageNumber++}});$(document).ready(function(){$('.page-1').show();$('.page-1').animateCss('fadeIn')});function startEndTimer(){NProgress.configure({trickle:!1,minimum:0})
+setTimeout(function(){NProgress.start()},250);var duration=30;var time=0;var func=function(){NProgress.set(time/duration);time++;if(time>duration){window.location.reload()}
+setTimeout(func,1000)};setTimeout(func,1000);func()}
+    </script>
+  </body>
+</html>
