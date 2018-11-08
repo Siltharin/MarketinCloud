@@ -1,1 +1,1 @@
-# MarketinCloud
+# MarketingCloud
